@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'fd.css'%}">
+</head>
+<body>
+    <section class="bg-b">
+    <nav>
+        <ul class="m-hide">
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Top Rated</a></li>
+            
+            <li class="m-hide"><a href="home"><img class="m-hide" style="height:32vh" src="https://img.freepik.com/premium-vector/food-service-logo_22423-5.jpg?w=360" alt="Logo"></a></li>
+            
+            <li><a href="#">FeedBack</a></li>
+            <li><a href="#">Hotel</a></li>
+        </ul>
+        <li class="l-hide"><a href="home"><img style="height:15vh" src="https://img.freepik.com/premium-vector/food-service-logo_22423-5.jpg?w=360" alt="Logo"></a></li>
+
+        
+    </nav>
+</section>
+
+    {%for c in mad %}
+    <div class="main-fd">
+        <img class="m-hide" height="340px" src="{% static '{{c.img}}' %}" alt="">
+        <img class="l-hide" height="200px" src="{% static '{{c.img}}' %}" alt="">
+        <p>{{c.dec}}</p>
+        
+    </div>
+    {%endfor%}
+    <div class="sug">
+        {%for o in other%}
+        <div class="sug-fd">
+            <img class="m-hide" height="140px" src="{% static '{{o.img}}' %}" alt="">
+            <img class="l-hide" height="120px" src="{% static '{{o.img}}' %}" alt="">
+
+            <p>{{o.dec}}</p>
+            <a class="btn" href="{{o.pat}}">info</a>
+        </div>
+        {%endfor%}
+    </div>
+</body>
+</html>

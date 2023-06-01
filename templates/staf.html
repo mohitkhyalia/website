@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeedBack</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css'%}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+<body>
+    <nav>
+        <ul class="m-hide">
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Top Rated</a></li>
+            
+            <li><a href="#">FeedBack</a></li>
+            <li><a href="#">Hotel</a></li>
+        </ul>
+        <li class="l-hide"><a href="index.html"><img style="height:15vh" src="https://img.freepik.com/premium-vector/food-service-logo_22423-5.jpg?w=360" alt="Logo"></a></li>
+
+        
+    </nav>
+    <div class="main-fb">
+        <form action="save" method='post'>
+            {% csrf_token %}
+            <input name="name" type="text" placeholder="Name" required>
+            <input name="email" type="email" placeholder="Email">
+            <textarea name="msg" name="" id="" placeholder="FeedBack" cols="30" rows="10"></textarea>
+            <input type="submit" placeholder='done' class="btn">
+        </form>
+    </div>
+</body>
+</html>
